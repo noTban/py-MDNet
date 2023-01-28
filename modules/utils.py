@@ -1,4 +1,4 @@
-from scipy.misc import imresize
+from scipy import misc
 import numpy as np
 import cv2
 
@@ -129,5 +129,5 @@ def crop_image(img, bbox, img_size=107, padding=16, valid=False):
         cropped[min_y_val - min_y:max_y_val - min_y, min_x_val - min_x:max_x_val - min_x, :] \
             = img[min_y_val:max_y_val, min_x_val:max_x_val, :]
 
-    scaled = imresize(cropped, (img_size, img_size))
+    scaled = misc.imresize(cropped, (img_size, img_size))
     return scaled
